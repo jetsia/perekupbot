@@ -60,7 +60,8 @@ def check_news_update():
         #Проходимся по карточкам телефонов и забираем id
         for article in articles_cards:
             article_url = article.get("href")
-            article_id = article_url.split('/')[-1]
+            article_idf = article_url.split('/')[-1]
+            article_id = article_idf.split('?')[0]
             # Условия проверки - Если id уже есть то телефон ничего не делаем
             if article_id in news_dist:
                 continue
